@@ -219,13 +219,13 @@ const CHAIN_INFO: ChainInfoMap = {
     infoLink: 'https://info.uniswap.org/#/',
     label: 'Scroll Pre-Alpha',
     logoUrl: scrollLogo,
-    nativeCurrency: { name: 'Scroll Prealpha Ether', symbol: 'TSETH', decimals: 18 },
+    nativeCurrency: { name: 'Scroll Pre-Alpha Ether', symbol: 'TSETH', decimals: 18 },
     //TODO: Add Scroll Brand Color
     color: darkTheme.chain_5,
 
     // Required for L2 networks
     blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://prealpha.scroll.io/bridge/',
+    bridge: 'https://scroll.io/prealpha/bridge/',
     defaultListUrl: SCROLL_PREALPHA_LIST,
     helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
   },
