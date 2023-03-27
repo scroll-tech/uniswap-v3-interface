@@ -39,6 +39,7 @@ export const CHAIN_IDS_TO_NAMES = {
   // [SupportedChainId.OPTIMISM]: 'optimism',
   // [SupportedChainId.OPTIMISM_GOERLI]: 'optimism_goerli',
   [SupportedChainId.SCROLL_ALPHA]: 'scroll_alpha',
+  [SupportedChainId.SCROLL_STAGING]: 'scroll_staging',
 }
 
 /**
@@ -79,6 +80,7 @@ export const TESTNET_CHAIN_IDS = [
   // SupportedChainId.ARBITRUM_RINKEBY,
   // SupportedChainId.OPTIMISM_GOERLI,
   SupportedChainId.SCROLL_ALPHA,
+  SupportedChainId.SCROLL_STAGING,
 ] as const
 
 export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
@@ -110,6 +112,7 @@ export const L2_CHAIN_IDS = [
   // SupportedChainId.OPTIMISM,
   // SupportedChainId.OPTIMISM_GOERLI,
   SupportedChainId.SCROLL_ALPHA,
+  SupportedChainId.SCROLL_STAGING,
 ] as const
 
 export type SupportedL2ChainId = typeof L2_CHAIN_IDS[number]
