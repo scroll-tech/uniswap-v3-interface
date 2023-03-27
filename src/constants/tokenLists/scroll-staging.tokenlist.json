@@ -1,0 +1,28 @@
+{
+  "name": "Scroll Whitelist Era",
+  "timestamp": "2022-03-01T22:44:18.339Z",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "tokens": [
+    {
+      "logoURI": "https://assets.coingecko.com/coins/images/2518/thumb/weth.png?1628852295",
+      "chainId": 5343541,
+      "address": "0xa1EA0B2354F5A344110af2b6AD68e75545009a03",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18
+    },
+    {
+      "logoURI": "https://assets.coingecko.com/coins/images/2518/thumb/weth.png?1628852295",
+      "chainId": 5343541,
+      "address": "0x9E49B313081158b6D66b6d82FB181A391A0d3026",
+      "name": "test-scroll-univ3",
+      "symbol": "TUV3",
+      "decimals": 18
+    }
+  ],
+  "logoURI": "ipfs://"
+}

@@ -89,6 +89,13 @@ const USDC_SCROLL_ALPHA = new Token(
   'USDC',
   'USD//C'
 )
+const TUV3_SCROLL_STAGING = new Token(
+    SupportedChainId.SCROLL_STAGING,
+    '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
+    18,
+    'TUV3',
+    'test-uniswap-v3',
+)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',
@@ -392,6 +399,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WETH',
     'Wrapped Ether'
   ),
+  [SupportedChainId.SCROLL_STAGING]: new Token(
+      SupportedChainId.SCROLL_STAGING,
+      '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
+      18,
+      "TUV3",
+      'test-uniswap-v3'
+  )
 }
 
 export function isCelo(chainId: number) {
@@ -481,5 +495,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     // [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     // [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
     [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
+    [SupportedChainId.SCROLL_STAGING]: TUV3_SCROLL_STAGING.address,
   },
 }
