@@ -39,6 +39,7 @@ const SHOULD_SHOW_ALERT = {
   // [SupportedChainId.CELO]: true,
   // [SupportedChainId.CELO_ALFAJORES]: true,
   [SupportedChainId.SCROLL_ALPHA]: true,
+  [SupportedChainId.SCROLL_STAGING]: true,
 }
 
 type NetworkAlertChains = keyof typeof SHOULD_SHOW_ALERT
