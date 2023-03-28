@@ -66,6 +66,8 @@ const BG_COLORS_BY_DARK_MODE_AND_CHAIN_ID: {
     //   'radial-gradient(285% 8200% at 30% 50%, rgba(40, 160, 240, 0.05) 0%, rgba(219, 255, 0, 0) 100%),radial-gradient(75% 75% at 0% 0%, rgba(150, 190, 220, 0.05) 0%, rgba(33, 114, 229, 0.1) 100%), hsla(0, 0%, 100%, 0.05)',
     [SupportedChainId.SCROLL_ALPHA]:
       'radial-gradient(100% 93.36% at 0% 6.64%, rgba(120, 128, 247, 0.1) 0%, rgba(62, 62, 160, 0.1) 100%)',
+    [SupportedChainId.SCROLL_STAGING]:
+      'radial-gradient(100% 93.36% at 0% 6.64%, rgba(120, 128, 247, 0.1) 0%, rgba(62, 62, 160, 0.1) 100%)',
   },
   light: {
     // [SupportedChainId.POLYGON]:
@@ -85,6 +87,8 @@ const BG_COLORS_BY_DARK_MODE_AND_CHAIN_ID: {
     // [SupportedChainId.ARBITRUM_RINKEBY]:
     //   'radial-gradient(285% 8200% at 30% 50%, rgba(40, 160, 240, 0.1) 0%, rgba(219, 255, 0, 0) 100%),radial-gradient(circle at top left, hsla(206, 50%, 75%, 0.01), hsla(215, 79%, 51%, 0.12)), hsla(0, 0%, 100%, 0.1)',
     [SupportedChainId.SCROLL_ALPHA]:
+      'radial-gradient(182.71% 205.59% at 2.81% 7.69%,#EEE2D4FF 0%, #E4D5C3FF 100%)',
+    [SupportedChainId.SCROLL_STAGING]:
       'radial-gradient(182.71% 205.59% at 2.81% 7.69%,#EEE2D4FF 0%, #E4D5C3FF 100%)',
   },
 }
@@ -146,6 +150,7 @@ const TEXT_COLORS: { [chainId in NetworkAlertChains]: string } = {
   // [SupportedChainId.ARBITRUM_ONE]: '#0490ed',
   // [SupportedChainId.ARBITRUM_RINKEBY]: '#0490ed',
   [SupportedChainId.SCROLL_ALPHA]: 'rgba(113, 98, 124)',
+  [SupportedChainId.SCROLL_STAGING]: 'rgba(113, 98, 124)',
 }
 
 function shouldShowAlert(chainId: number | undefined): chainId is NetworkAlertChains {

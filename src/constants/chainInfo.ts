@@ -229,6 +229,23 @@ const CHAIN_INFO: ChainInfoMap = {
     defaultListUrl: SCROLL_ALPHA_LIST,
     helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
   },
+  [SupportedChainId.SCROLL_STAGING]: {
+    networkType: NetworkType.L2,
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://blockscout.scroll.io/',
+    infoLink: 'https://info.uniswap.org/#/',
+    label: 'Scroll Staging',
+    logoUrl: scrollLogo,
+    nativeCurrency: { name: 'Scroll Staging Ether', symbol: 'ETH', decimals: 18 },
+    //TODO: Add Scroll Brand Color
+    color: darkTheme.chain_5,
+
+    // Required for L2 networks
+    blockWaitMsBeforeWarning: ms`10m`,
+    bridge: 'https://scroll.io/alpha/bridge/',
+    defaultListUrl: SCROLL_ALPHA_LIST,
+    helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
+  }
 }
 
 export function getChainInfo(chainId: SupportedL1ChainId): L1ChainInfo
