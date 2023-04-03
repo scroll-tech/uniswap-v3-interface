@@ -17,6 +17,8 @@ const WRAPPED_LIST = 'wrapped.tokensoft.eth'
 // export const CELO_LIST = 'https://celo-org.github.io/celo-token-list/celo.tokenlist.json'
 export const SCROLL_ALPHA_LIST =
   'https://raw.githubusercontent.com/scroll-tech/uniswap-v3-interface/scroll-showcase/src/constants/tokenLists/scroll-alpha.tokenlist.json'
+export const SCROLL_STAGING_LIST =
+  'https://raw.githubusercontent.com/Lawliet-Chan/uniswap-v3-interface/add_staging/src/constants/tokenLists/scroll-staging.tokenlist.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST, UNI_UNSUPPORTED_LIST]
 
@@ -37,6 +39,7 @@ export const DEFAULT_INACTIVE_LIST_URLS: string[] = [
   // OPTIMISM_LIST,
   // CELO_LIST,
   SCROLL_ALPHA_LIST,
+  SCROLL_STAGING_LIST,
   ...UNSUPPORTED_LIST_URLS,
 ]
 

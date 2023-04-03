@@ -4,7 +4,7 @@ import ms from 'ms.macro'
 import { darkTheme } from 'theme/colors'
 
 import { SupportedChainId, SupportedL1ChainId, SupportedL2ChainId } from './chains'
-import { SCROLL_ALPHA_LIST } from './lists'
+import { SCROLL_ALPHA_LIST, SCROLL_STAGING_LIST } from './lists'
 
 export const AVERAGE_L1_BLOCK_TIME = ms`12s`
 
@@ -243,7 +243,7 @@ const CHAIN_INFO: ChainInfoMap = {
     // Required for L2 networks
     blockWaitMsBeforeWarning: ms`10m`,
     bridge: 'https://scroll.io/alpha/bridge/',
-    defaultListUrl: SCROLL_ALPHA_LIST,
+    defaultListUrl: SCROLL_STAGING_LIST,
     helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
   }
 }
