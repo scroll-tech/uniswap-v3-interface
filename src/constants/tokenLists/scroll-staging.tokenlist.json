@@ -14,6 +14,14 @@
       "name": "test-scroll-univ3",
       "symbol": "TUV3",
       "decimals": 18
+    },
+    {
+      "logoURI": "https://assets.coingecko.com/coins/images/2518/thumb/weth.png?1628852295",
+      "chainId": 5343532222,
+      "address": "0x5300000000000000000000000000000000000004",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18
     }
   ],
   "logoURI": "ipfs://"
