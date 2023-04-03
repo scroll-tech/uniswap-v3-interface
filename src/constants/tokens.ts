@@ -96,6 +96,13 @@ const TUV3_SCROLL_STAGING = new Token(
     'TUV3',
     'test-uniswap-v3',
 )
+const WETH_SCROLL_STAGING = new Token(
+    SupportedChainId.SCROLL_STAGING,
+    "0x5300000000000000000000000000000000000004",
+    18,
+    'WETH',
+    'Wrapped Ether',
+)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',
@@ -496,5 +503,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     // [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
     [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
     [SupportedChainId.SCROLL_STAGING]: TUV3_SCROLL_STAGING.address,
+    [SupportedChainId.SCROLL_STAGING]: WETH_SCROLL_STAGING.address,
   },
 }
