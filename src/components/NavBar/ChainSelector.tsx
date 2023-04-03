@@ -65,7 +65,7 @@ export const ChainSelector = ({ leftAlign }: ChainSelectorProps) => {
   }
 
   // const isSupported = !!info
-  const isSupported = !!info && (chainId === SupportedChainId.SCROLL_ALPHA || chainId === SupportedChainId.SCROLL_STAGING);
+  const isSupported = !!info && chainId === SupportedChainId.SCROLL_STAGING;
 
   const dropdown = (
     <NavDropdown top="56" left={leftAlign ? '0' : 'auto'} right={leftAlign ? 'auto' : '0'} ref={modalRef}>
