@@ -21,7 +21,7 @@ export enum SupportedChainId {
   // CELO_ALFAJORES = 44787,
 
   // SCROLL_ALPHA = 534353,
-  SCROLL_STAGING = 5343541,
+  SCROLL_STAGING = 5343532222,
 }
 
 export const CHAIN_IDS_TO_NAMES = {
