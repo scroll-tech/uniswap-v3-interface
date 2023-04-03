@@ -408,10 +408,10 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
   ),
   [SupportedChainId.SCROLL_STAGING]: new Token(
       SupportedChainId.SCROLL_STAGING,
-      '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
+      "0x5300000000000000000000000000000000000004",
       18,
-      "TUV3",
-      'test-uniswap-v3'
+      'WETH',
+      'Wrapped Ether',
   )
 }
 
