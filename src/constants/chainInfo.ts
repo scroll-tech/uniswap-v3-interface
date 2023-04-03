@@ -212,7 +212,7 @@ const CHAIN_INFO: ChainInfoMap = {
   //   nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
   //   defaultListUrl: CELO_LIST,
   // },
-  [SupportedChainId.SCROLL_ALPHA]: {
+  [SupportedChainId.SCROLL_STAGING]: {
     networkType: NetworkType.L2,
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://blockscout.scroll.io/',

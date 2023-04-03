@@ -56,7 +56,7 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
   //   }
   // }
 
-  if (chainId === SupportedChainId.SCROLL_ALPHA) {
+  if (chainId === SupportedChainId.SCROLL_STAGING) {
     switch (type) {
       case ExplorerDataType.TRANSACTION:
         return `https://blockscout.scroll.io/tx/${data}`
