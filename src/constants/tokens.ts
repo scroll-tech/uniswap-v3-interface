@@ -421,7 +421,7 @@ export function isCelo(chainId: number) {
 }
 
 export function isScroll(chainId: number): chainId is SupportedChainId.SCROLL_ALPHA {
-  return chainId === SupportedChainId.SCROLL_ALPHA
+  return chainId === SupportedChainId.SCROLL_ALPHA || chainId === SupportedChainId.SCROLL_STAGING
 }
 
 // function getCeloNativeCurrency(chainId: number) {
@@ -502,7 +502,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     // [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     // [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
     [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
-    [SupportedChainId.SCROLL_STAGING]: TUV3_SCROLL_STAGING.address,
-    [SupportedChainId.SCROLL_STAGING]: WETH_SCROLL_STAGING.address,
+    // [SupportedChainId.SCROLL_STAGING]: TUV3_SCROLL_STAGING.address,
+    // [SupportedChainId.SCROLL_STAGING]: WETH_SCROLL_STAGING.address,
   },
 }
