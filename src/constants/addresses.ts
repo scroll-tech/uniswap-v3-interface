@@ -58,6 +58,7 @@ export const V3_MIGRATOR_ADDRESSES: AddressMap = {
   // [SupportedChainId.CELO]: CELO_V3_MIGRATOR_ADDRESSES,
   // [SupportedChainId.CELO_ALFAJORES]: CELO_V3_MIGRATOR_ADDRESSES,
   [SupportedChainId.SCROLL_ALPHA]: '0x5Db25d2b7dba65c8aA2b16465438Ec44f75b0511',
+  [SupportedChainId.SCROLL_STAGING]: '0xfb14B5d29c302A0f74245c5dEb918f5faB5320dd',
 }
 
 export const MULTICALL_ADDRESS: AddressMap = {
@@ -131,6 +132,7 @@ export const QUOTER_ADDRESSES: AddressMap = {
   // [SupportedChainId.CELO]: CELO_QUOTER_ADDRESSES,
   // [SupportedChainId.CELO_ALFAJORES]: CELO_QUOTER_ADDRESSES,
   [SupportedChainId.SCROLL_ALPHA]: '0xbf1c1FE1e9e900aFd5ba2Eb67480c44266D5eD84',
+  [SupportedChainId.SCROLL_STAGING]: '0x14724C2Ca23cA7E3769f47F7C281B74DF32d76a4',
 }
 
 export const NONFUNGIBLE_POSITION_MANAGER_ADDRESSES: AddressMap = {
