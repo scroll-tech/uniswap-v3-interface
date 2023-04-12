@@ -89,20 +89,6 @@ const USDC_SCROLL_ALPHA = new Token(
   'USDC',
   'USD//C'
 )
-const TUV3_SCROLL_STAGING = new Token(
-    SupportedChainId.SCROLL_STAGING,
-    '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
-    18,
-    'TUV3',
-    'test-uniswap-v3',
-)
-const WETH_SCROLL_STAGING = new Token(
-    SupportedChainId.SCROLL_STAGING,
-    "0x5300000000000000000000000000000000000004",
-    18,
-    'WETH',
-    'Wrapped Ether',
-)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',
