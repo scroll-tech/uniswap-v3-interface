@@ -91,6 +91,10 @@ export const FALLBACK_URLS: { [key in SupportedChainId]: string[] } = {
     // "Safe" URLs
     'https://alpha-rpc.scroll.io/l2',
   ],
+  [SupportedChainId.SCROLL_STAGING]: [
+    // "Safe" URLs
+    'https://staging-rpc.scroll.io/l2,',
+  ]  
 }
 
 /**
@@ -139,4 +143,5 @@ export const RPC_URLS: { [key in SupportedChainId]: string[] } = {
   // [SupportedChainId.CELO]: FALLBACK_URLS[SupportedChainId.CELO],
   // [SupportedChainId.CELO_ALFAJORES]: FALLBACK_URLS[SupportedChainId.CELO_ALFAJORES],
   [SupportedChainId.SCROLL_ALPHA]: FALLBACK_URLS[SupportedChainId.SCROLL_ALPHA],
+  [SupportedChainId.SCROLL_STAGING]: FALLBACK_URLS[SupportedChainId.SCROLL_STAGING],
 }

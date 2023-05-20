@@ -195,6 +195,10 @@ export const COMMON_BASES: ChainCurrencyList = {
     UNI_SCROLL_ALPHA,
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_ALPHA] as Token,
   ],
+  [SupportedChainId.SCROLL_STAGING]: [
+      nativeOnChain(SupportedChainId.SCROLL_STAGING),
+      WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_STAGING] as Token,
+  ]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

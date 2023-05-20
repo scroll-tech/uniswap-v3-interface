@@ -1,26 +1,27 @@
-import { useWeb3React } from '@web3-react/core'
-import { getChainInfo } from 'constants/chainInfo'
-import { SupportedChainId } from 'constants/chains'
-import { useOnClickOutside } from 'hooks/useOnClickOutside'
+import {useWeb3React} from '@web3-react/core'
+import {getChainInfo} from 'constants/chainInfo'
+import {SupportedChainId} from 'constants/chains'
+import {useOnClickOutside} from 'hooks/useOnClickOutside'
 import useSelectChain from 'hooks/useSelectChain'
 import useSyncChainQuery from 'hooks/useSyncChainQuery'
-import { Box } from 'nft/components/Box'
-import { Portal } from 'nft/components/common/Portal'
-import { Column, Row } from 'nft/components/Flex'
-import { TokenWarningRedIcon } from 'nft/components/icons'
-import { subhead } from 'nft/css/common.css'
-import { themeVars } from 'nft/css/sprinkles.css'
-import { useIsMobile } from 'nft/hooks'
-import { useCallback, useRef, useState } from 'react'
-import { ChevronDown, ChevronUp } from 'react-feather'
-import { useTheme } from 'styled-components/macro'
+import {Box} from 'nft/components/Box'
+import {Portal} from 'nft/components/common/Portal'
+import {Column, Row} from 'nft/components/Flex'
+import {TokenWarningRedIcon} from 'nft/components/icons'
+import {subhead} from 'nft/css/common.css'
+import {themeVars} from 'nft/css/sprinkles.css'
+import {useIsMobile} from 'nft/hooks'
+import {useCallback, useRef, useState} from 'react'
+import {ChevronDown, ChevronUp} from 'react-feather'
+import {useTheme} from 'styled-components/macro'
 
 import * as styles from './ChainSelector.css'
 import ChainSelectorRow from './ChainSelectorRow'
-import { NavDropdown } from './NavDropdown'
+import {NavDropdown} from './NavDropdown'
 
 const NETWORK_SELECTOR_CHAINS = [
   SupportedChainId.SCROLL_ALPHA,
+  SupportedChainId.SCROLL_STAGING,
   // SupportedChainId.MAINNET,
   // SupportedChainId.POLYGON,
   // SupportedChainId.OPTIMISM,
@@ -65,7 +66,7 @@ export const ChainSelector = ({ leftAlign }: ChainSelectorProps) => {
   }
 
   // const isSupported = !!info
-  const isSupported = !!info && chainId === SupportedChainId.SCROLL_ALPHA;
+  const isSupported = !!info && (chainId === SupportedChainId.SCROLL_ALPHA || chainId === SupportedChainId.SCROLL_STAGING);
 
   const dropdown = (
     <NavDropdown top="56" left={leftAlign ? '0' : 'auto'} right={leftAlign ? 'auto' : '0'} ref={modalRef}>
