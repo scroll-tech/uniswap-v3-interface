@@ -41,4 +41,9 @@ describe('#anonymizeLink', () => {
   it('works for scroll alpha urls', () => {
     expect(anonymizeLink('https://blockscout.scroll.io/0x/0xabc')).toEqual('https://blockscout.scroll.io/0x/***')
   })
+  it('works for scroll sepolia urls', () => {
+    expect(anonymizeLink('https://sepolia-blockscout.scroll.io/0x/0xabc')).toEqual(
+      'https://sepolia-blockscout.scroll.io/0x/***'
+    )
+  })
 })

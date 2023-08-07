@@ -185,9 +185,13 @@ export const COMMON_BASES: ChainCurrencyList = {
   //   CUSD_CELO_ALFAJORES,
   //   CEUR_CELO_ALFAJORES,
   // ],
-  [SupportedChainId.SCROLL_ALPHA]: [
-    nativeOnChain(SupportedChainId.SCROLL_ALPHA),
-    WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_ALPHA] as Token,
+  // [SupportedChainId.SCROLL_ALPHA]: [
+  //   nativeOnChain(SupportedChainId.SCROLL_ALPHA),
+  //   WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_ALPHA] as Token,
+  // ],
+  [SupportedChainId.SCROLL_SEPOLIA]: [
+    nativeOnChain(SupportedChainId.SCROLL_SEPOLIA),
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_SEPOLIA] as Token,
   ],
 }
 

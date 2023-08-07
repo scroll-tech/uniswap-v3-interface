@@ -82,20 +82,20 @@ export const USDC_MAINNET = new Token(
 //   'USDC',
 //   'USD//C'
 // )
-const USDC_SCROLL_ALPHA = new Token(
-  SupportedChainId.SCROLL_ALPHA,
-  '0x38BA9a208F34Ddc9332f6DfC0E9d567f098958A4',
-  6,
-  'USDC',
-  'USD//C'
-)
-const TUV3_SCROLL_STAGING = new Token(
-    SupportedChainId.SCROLL_STAGING,
-    '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
-    18,
-    'TUV3',
-    'test-uniswap-v3',
-)
+// const USDC_SCROLL_ALPHA = new Token(
+//   SupportedChainId.SCROLL_ALPHA,
+//   '0x38BA9a208F34Ddc9332f6DfC0E9d567f098958A4',
+//   6,
+//   'USDC',
+//   'USD//C'
+// )
+// const USDC_SCROLL_SEPOLIA = new Token(
+//   SupportedChainId.SCROLL_SEPOLIA,
+//   'TODO',
+//   6,
+//   'USDC',
+//   'USD//C'
+// )
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',
@@ -392,20 +392,20 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
   //   'CELO',
   //   'Celo native asset'
   // ),
-  [SupportedChainId.SCROLL_ALPHA]: new Token(
-    SupportedChainId.SCROLL_ALPHA,
-    '0xa1EA0B2354F5A344110af2b6AD68e75545009a03',
+  // [SupportedChainId.SCROLL_ALPHA]: new Token(
+  //   SupportedChainId.SCROLL_ALPHA,
+  //   '0xa1EA0B2354F5A344110af2b6AD68e75545009a03',
+  //   18,
+  //   'WETH',
+  //   'Wrapped Ether'
+  // ),
+  [SupportedChainId.SCROLL_SEPOLIA]: new Token(
+    SupportedChainId.SCROLL_SEPOLIA,
+    '0x5300000000000000000000000000000000000004',
     18,
     'WETH',
     'Wrapped Ether'
   ),
-  [SupportedChainId.SCROLL_STAGING]: new Token(
-      SupportedChainId.SCROLL_STAGING,
-      '0x9E49B313081158b6D66b6d82FB181A391A0d3026',
-      18,
-      "TUV3",
-      'test-uniswap-v3'
-  )
 }
 
 export function isCelo(chainId: number) {
@@ -413,8 +413,8 @@ export function isCelo(chainId: number) {
   return false
 }
 
-export function isScroll(chainId: number): chainId is SupportedChainId.SCROLL_ALPHA {
-  return chainId === SupportedChainId.SCROLL_ALPHA
+export function isScroll(chainId: number): chainId is SupportedChainId.SCROLL_SEPOLIA {
+  return chainId === SupportedChainId.SCROLL_SEPOLIA
 }
 
 // function getCeloNativeCurrency(chainId: number) {
@@ -494,7 +494,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     // [SupportedChainId.RINKEBY]: USDC_RINKEBY.address,
     // [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     // [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
-    [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
-    [SupportedChainId.SCROLL_STAGING]: TUV3_SCROLL_STAGING.address,
+    // [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
+    // [SupportedChainId.SCROLL_SEPOLIA]: USDC_SCROLL_SEPOLIA.address,
   },
 }

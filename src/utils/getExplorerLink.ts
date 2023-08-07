@@ -56,17 +56,31 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
   //   }
   // }
 
-  if (chainId === SupportedChainId.SCROLL_ALPHA) {
+  // if (chainId === SupportedChainId.SCROLL_ALPHA) {
+  //   switch (type) {
+  //     case ExplorerDataType.TRANSACTION:
+  //       return `https://blockscout.scroll.io/tx/${data}`
+  //     case ExplorerDataType.ADDRESS:
+  //     case ExplorerDataType.TOKEN:
+  //       return `https://blockscout.scroll.io/address/${data}`
+  //     case ExplorerDataType.BLOCK:
+  //       return `https://blockscout.scroll.io/block/${data}`
+  //     default:
+  //       return `https://blockscout.scroll.io/`
+  //   }
+  // }
+
+  if (chainId === SupportedChainId.SCROLL_SEPOLIA) {
     switch (type) {
       case ExplorerDataType.TRANSACTION:
-        return `https://blockscout.scroll.io/tx/${data}`
+        return `https://sepolia-blockscout.scroll.io/tx/${data}`
       case ExplorerDataType.ADDRESS:
       case ExplorerDataType.TOKEN:
-        return `https://blockscout.scroll.io/address/${data}`
+        return `https://sepolia-blockscout.scroll.io/address/${data}`
       case ExplorerDataType.BLOCK:
-        return `https://blockscout.scroll.io/block/${data}`
+        return `https://sepolia-blockscout.scroll.io/block/${data}`
       default:
-        return `https://blockscout.scroll.io/`
+        return `https://sepolia-blockscout.scroll.io/`
     }
   }
 

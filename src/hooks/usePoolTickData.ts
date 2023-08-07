@@ -18,7 +18,8 @@ const PRICE_FIXED_DIGITS = 8
 const CHAIN_IDS_MISSING_SUBGRAPH_DATA = [
   // SupportedChainId.ARBITRUM_ONE,
   // SupportedChainId.ARBITRUM_RINKEBY,
-  SupportedChainId.SCROLL_ALPHA,
+  // SupportedChainId.SCROLL_ALPHA,
+  SupportedChainId.SCROLL_SEPOLIA,
 ]
 
 // Tick with fields parsed to JSBIs, and active liquidity computed.

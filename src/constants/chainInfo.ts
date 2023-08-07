@@ -4,7 +4,8 @@ import ms from 'ms.macro'
 import { darkTheme } from 'theme/colors'
 
 import { SupportedChainId, SupportedL1ChainId, SupportedL2ChainId } from './chains'
-import { SCROLL_ALPHA_LIST } from './lists'
+// import { SCROLL_ALPHA_LIST } from './lists'
+import { SCROLL_SEPOLIA_LIST } from './lists'
 
 export const AVERAGE_L1_BLOCK_TIME = ms`12s`
 
@@ -212,23 +213,40 @@ const CHAIN_INFO: ChainInfoMap = {
   //   nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
   //   defaultListUrl: CELO_LIST,
   // },
-  [SupportedChainId.SCROLL_ALPHA]: {
+  [SupportedChainId.SCROLL_SEPOLIA]: {
     networkType: NetworkType.L2,
     docs: 'https://docs.uniswap.org/',
-    explorer: 'https://blockscout.scroll.io/',
+    explorer: 'https://sepolia-blockscout.scroll.io/',
     infoLink: 'https://info.uniswap.org/#/',
-    label: 'Scroll Alpha',
+    label: 'Scroll Sepolia',
     logoUrl: scrollLogo,
-    nativeCurrency: { name: 'Scroll Alpha Ether', symbol: 'ETH', decimals: 18 },
+    nativeCurrency: { name: 'Scroll Sepolia Ether', symbol: 'ETH', decimals: 18 },
     //TODO: Add Scroll Brand Color
     color: darkTheme.chain_5,
 
     // Required for L2 networks
     blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://scroll.io/alpha/bridge/',
-    defaultListUrl: SCROLL_ALPHA_LIST,
+    bridge: 'https://scroll.io/bridge/',
+    defaultListUrl: SCROLL_SEPOLIA_LIST,
     helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
   },
+  // [SupportedChainId.SCROLL_ALPHA]: {
+  //   networkType: NetworkType.L2,
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://blockscout.scroll.io/',
+  //   infoLink: 'https://info.uniswap.org/#/',
+  //   label: 'Scroll Alpha',
+  //   logoUrl: scrollLogo,
+  //   nativeCurrency: { name: 'Scroll Alpha Ether', symbol: 'ETH', decimals: 18 },
+  //   //TODO: Add Scroll Brand Color
+  //   color: darkTheme.chain_5,
+
+  //   // Required for L2 networks
+  //   blockWaitMsBeforeWarning: ms`10m`,
+  //   bridge: 'https://scroll.io/alpha/bridge/',
+  //   defaultListUrl: SCROLL_ALPHA_LIST,
+  //   helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
+  // },
 }
 
 export function getChainInfo(chainId: SupportedL1ChainId): L1ChainInfo
