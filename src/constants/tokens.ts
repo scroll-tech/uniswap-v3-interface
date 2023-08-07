@@ -82,29 +82,29 @@ export const USDC_MAINNET = new Token(
 //   'USDC',
 //   'USD//C'
 // )
-export const USDC_SCROLL_ALPHA = new Token(
-  SupportedChainId.SCROLL_ALPHA,
-  '0x67aE69Fd63b4fc8809ADc224A9b82Be976039509',
-  18,
-  'USDC',
-  'Scroll USDC'
-)
+//export const USDC_SCROLL_ALPHA = new Token(
+//  SupportedChainId.SCROLL_ALPHA,
+//  '0x67aE69Fd63b4fc8809ADc224A9b82Be976039509',
+//  18,
+//  'USDC',
+//  'Scroll USDC'
+//)
 
-export const UNI_SCROLL_ALPHA = new Token(
-  SupportedChainId.SCROLL_ALPHA,
-  '0x0CDEA04b370C1FA4bC2032b4ef23dB3EBCbA258a',
-  18,
-  'UNI',
-  'Uniswap Token'
-)
+//export const UNI_SCROLL_ALPHA = new Token(
+//  SupportedChainId.SCROLL_ALPHA,
+//  '0x0CDEA04b370C1FA4bC2032b4ef23dB3EBCbA258a',
+//  18,
+//  'UNI',
+//  'Uniswap Token'
+//)
 
-export const DAI_SCROLL_ALPHA = new Token(
-  SupportedChainId.SCROLL_ALPHA,
-  '0x4702E5AEb70BdC05B11F8d8E701ad000dc85bD44',
-  18,
-  'DAI',
-  'DAI Stablecoin'
-)
+//export const DAI_SCROLL_ALPHA = new Token(
+//  SupportedChainId.SCROLL_ALPHA,
+//  '0x4702E5AEb70BdC05B11F8d8E701ad000dc85bD44',
+//  18,
+//  'DAI',
+//  'DAI Stablecoin'
+//)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',
@@ -496,6 +496,6 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     // [SupportedChainId.RINKEBY]: USDC_RINKEBY.address,
     // [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     // [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
-    [SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
+    //[SupportedChainId.SCROLL_ALPHA]: USDC_SCROLL_ALPHA.address,
   },
 }
