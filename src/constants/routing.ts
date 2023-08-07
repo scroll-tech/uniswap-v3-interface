@@ -190,9 +190,9 @@ export const COMMON_BASES: ChainCurrencyList = {
   // ],
   [SupportedChainId.SCROLL_ALPHA]: [
     nativeOnChain(SupportedChainId.SCROLL_ALPHA),
-    DAI_SCROLL_ALPHA,
-    USDC_SCROLL_ALPHA,
-    UNI_SCROLL_ALPHA,
+    //DAI_SCROLL_ALPHA,
+    //USDC_SCROLL_ALPHA,
+    //UNI_SCROLL_ALPHA,
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_ALPHA] as Token,
   ],
 }

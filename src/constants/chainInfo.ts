@@ -217,9 +217,9 @@ const CHAIN_INFO: ChainInfoMap = {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://blockscout.scroll.io/',
     infoLink: 'https://info.uniswap.org/#/',
-    label: 'Scroll Alpha',
+    label: 'Scroll Sepolia',
     logoUrl: scrollLogo,
-    nativeCurrency: { name: 'Scroll Alpha Ether', symbol: 'ETH', decimals: 18 },
+    nativeCurrency: { name: 'Scroll Sepolia Ether', symbol: 'ETH', decimals: 18 },
     //TODO: Add Scroll Brand Color
     color: darkTheme.chain_5,
 
