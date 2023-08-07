@@ -29,7 +29,6 @@ import Modal from '../Modal'
 import { CoinbaseWalletOption, OpenCoinbaseWalletOption } from './CoinbaseWalletOption'
 import { InjectedOption, InstallMetaMaskOption, MetaMaskOption } from './InjectedOption'
 import PendingView from './PendingView'
-import { WalletConnectOption } from './WalletConnectOption'
 
 const CloseIcon = styled.div`
   position: absolute;
@@ -274,8 +273,8 @@ export default function WalletModal({
       coinbaseWalletOption = <CoinbaseWalletOption tryActivation={tryActivation} />
     }
 
-    const walletConnectionOption =
-      (!isInjectedMobileBrowser && <WalletConnectOption tryActivation={tryActivation} />) ?? null
+    // const walletConnectionOption =
+    //   (!isInjectedMobileBrowser && <WalletConnectOption tryActivation={tryActivation} />) ?? null
 
     return (
       <>
