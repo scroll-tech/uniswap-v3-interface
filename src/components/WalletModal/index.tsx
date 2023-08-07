@@ -281,7 +281,7 @@ export default function WalletModal({
       <>
         {injectedOption}
         {coinbaseWalletOption}
-        {walletConnectionOption}
+        {/* {walletConnectionOption} */}
       </>
     )
   }
