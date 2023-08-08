@@ -96,6 +96,13 @@ export const USDC_MAINNET = new Token(
 //   'USDC',
 //   'USD//C'
 // )
+export const GHO_SCROLL_SEPOLIA = new Token(
+  SupportedChainId.SCROLL_SEPOLIA,
+  '0xD9692f1748aFEe00FACE2da35242417dd05a8615',
+  18,
+  'GHO',
+  'Gho Token'
+)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',

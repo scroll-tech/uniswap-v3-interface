@@ -18,7 +18,7 @@ const WRAPPED_LIST = 'wrapped.tokensoft.eth'
 // export const SCROLL_ALPHA_LIST =
 //   'https://raw.githubusercontent.com/scroll-tech/uniswap-v3-interface/scroll-showcase/src/constants/tokenLists/scroll-alpha.tokenlist.json'
 export const SCROLL_SEPOLIA_LIST =
-  'https://raw.githubusercontent.com/scroll-tech/uniswap-v3-interface/scroll-showcase/src/constants/tokenLists/scroll-sepolia.tokenlist.json'
+  'https://raw.githubusercontent.com/scroll-tech/uniswap-v3-interface/scroll-sepolia-showcase/src/constants/tokenLists/scroll-sepolia.tokenlist.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST, UNI_UNSUPPORTED_LIST]
 

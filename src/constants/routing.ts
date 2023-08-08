@@ -17,6 +17,11 @@ import {
   FEI,
   FRAX,
   FXS,
+  // WBTC_ARBITRUM_ONE,
+  // WBTC_OPTIMISM,
+  // WBTC_POLYGON,
+  // WETH_POLYGON,
+  GHO_SCROLL_SEPOLIA,
   nativeOnChain,
   // PORTAL_ETH_CELO,
   // PORTAL_USDC_CELO,
@@ -34,10 +39,6 @@ import {
   // USDT_OPTIMISM,
   // USDT_POLYGON,
   WBTC,
-  // WBTC_ARBITRUM_ONE,
-  // WBTC_OPTIMISM,
-  // WBTC_POLYGON,
-  // WETH_POLYGON,
   // WETH_POLYGON_MUMBAI,
   WRAPPED_NATIVE_CURRENCY,
 } from './tokens'
@@ -86,6 +87,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   //   WETH_POLYGON,
   // ],
   // [SupportedChainId.CELO]: [CUSD_CELO, CEUR_CELO, CMC02_CELO, PORTAL_USDC_CELO, PORTAL_ETH_CELO],
+  [SupportedChainId.SCROLL_SEPOLIA]: [GHO_SCROLL_SEPOLIA],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
@@ -192,6 +194,7 @@ export const COMMON_BASES: ChainCurrencyList = {
   [SupportedChainId.SCROLL_SEPOLIA]: [
     nativeOnChain(SupportedChainId.SCROLL_SEPOLIA),
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_SEPOLIA] as Token,
+    GHO_SCROLL_SEPOLIA,
   ],
 }
 
