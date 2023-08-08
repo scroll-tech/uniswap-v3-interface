@@ -15,6 +15,14 @@
       "symbol": "WETH",
       "decimals": 18
     }
+    {
+      "logoURI": "https://gho.aave.com/icons/tokens/gho.svg",
+      "chainId": 534351,
+      "address": "0xD9692f1748aFEe00FACE2da35242417dd05a8615",
+      "name": "Gho Token",
+      "symbol": "GHO",
+      "decimals": 18
+    }
   ],
   "logoURI": "ipfs://"
 }
