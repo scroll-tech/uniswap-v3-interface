@@ -103,6 +103,13 @@ export const GHO_SCROLL_SEPOLIA = new Token(
   'GHO',
   'Gho Token'
 )
+export const USDC_SCROLL_SEPOLIA = new Token(
+  SupportedChainId.SCROLL_SEPOLIA,
+  '0x690000EF01deCE82d837B5fAa2719AE47b156697',
+  18,
+  'USDC',
+  'USD Coin'
+)
 // export const PORTAL_USDC_CELO = new Token(
 //   SupportedChainId.CELO,
 //   '0x37f750B7cC259A2f741AF45294f6a16572CF5cAd',

@@ -32,6 +32,7 @@ import {
   TRIBE,
   // USDC_ARBITRUM,
   USDC_MAINNET,
+  USDC_SCROLL_SEPOLIA,
   // USDC_OPTIMISM,
   // USDC_POLYGON,
   USDT,
@@ -87,7 +88,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   //   WETH_POLYGON,
   // ],
   // [SupportedChainId.CELO]: [CUSD_CELO, CEUR_CELO, CMC02_CELO, PORTAL_USDC_CELO, PORTAL_ETH_CELO],
-  [SupportedChainId.SCROLL_SEPOLIA]: [GHO_SCROLL_SEPOLIA],
+  [SupportedChainId.SCROLL_SEPOLIA]: [GHO_SCROLL_SEPOLIA, USDC_SCROLL_SEPOLIA],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
@@ -195,6 +196,7 @@ export const COMMON_BASES: ChainCurrencyList = {
     nativeOnChain(SupportedChainId.SCROLL_SEPOLIA),
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.SCROLL_SEPOLIA] as Token,
     GHO_SCROLL_SEPOLIA,
+    USDC_SCROLL_SEPOLIA,
   ],
 }
 

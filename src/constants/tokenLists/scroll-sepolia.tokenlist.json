@@ -14,13 +14,21 @@
       "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18
-    }
+    },
     {
       "logoURI": "https://gho.aave.com/icons/tokens/gho.svg",
       "chainId": 534351,
       "address": "0xD9692f1748aFEe00FACE2da35242417dd05a8615",
       "name": "Gho Token",
       "symbol": "GHO",
+      "decimals": 18
+    },
+    {
+      "logoURI": "https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png?1547042389",
+      "chainId": 534351,
+      "address": "0x690000EF01deCE82d837B5fAa2719AE47b156697",
+      "name": "USD Coin",
+      "symbol": "USDC",
       "decimals": 18
     }
   ],
