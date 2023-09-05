@@ -93,7 +93,7 @@ export const FALLBACK_URLS: { [key in SupportedChainId]: string[] } = {
   // ],
   [SupportedChainId.SCROLL_SEPOLIA]: [
     // "Safe" URLs
-    'https://sepolia-rpc.scroll.io,',
+    'https://sepolia-rpc.scroll.io',
   ],
 }
 
