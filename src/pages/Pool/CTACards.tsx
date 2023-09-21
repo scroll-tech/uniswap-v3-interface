@@ -9,7 +9,6 @@ import { ExternalLink } from '../../theme'
 
 const CTASection = styled.section`
   display: grid;
-  grid-template-columns: 2fr 1.5fr;
   gap: 8px;
   opacity: 0.8;
 
@@ -103,20 +102,10 @@ export default function CTACards() {
             <Trans>Learn about providing liquidity</Trans> ↗
           </HeaderText>
           <ThemedText.DeprecatedBody fontWeight={400} style={{ alignItems: 'center', display: 'flex' }}>
-            <Trans>Check out our v3 LP walkthrough and migration guides.</Trans>
+            <Trans>Check out the v3 LP walkthrough and migration guides.</Trans>
           </ThemedText.DeprecatedBody>
         </ResponsiveColumn>
       </CTA1>
-      <CTA2 data-testid="cta-infolink" href={infoLink + 'pools'}>
-        <ResponsiveColumn>
-          <HeaderText style={{ alignSelf: 'flex-start' }}>
-            <Trans>Top pools</Trans> ↗
-          </HeaderText>
-          <ThemedText.DeprecatedBody fontWeight={400} style={{ alignSelf: 'flex-start' }}>
-            <Trans>Explore Uniswap Analytics.</Trans>
-          </ThemedText.DeprecatedBody>
-        </ResponsiveColumn>
-      </CTA2>
     </CTASection>
   )
 }
