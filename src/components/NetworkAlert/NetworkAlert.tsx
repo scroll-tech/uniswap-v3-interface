@@ -220,9 +220,6 @@ export function NetworkAlert() {
               <Header>
                 <Trans>Intended for Demo Purposes Only</Trans>
               </Header>
-              <HideSmall>
-                <Trans>This is not an official Uniswap release.</Trans>
-              </HideSmall>
             </AutoRow>
           </BodyText>
           <StyledArrowUpRight color={textColor} />
