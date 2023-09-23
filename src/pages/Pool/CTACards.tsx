@@ -1,7 +1,5 @@
 import { Trans } from '@lingui/macro'
-import { useWeb3React } from '@web3-react/core'
 import { AutoColumn } from 'components/Column'
-import { getChainInfoOrDefault } from 'constants/chainInfo'
 import styled from 'styled-components/macro'
 import { ThemedText } from 'theme'
 
@@ -44,30 +42,6 @@ const CTA1 = styled(ExternalLink)`
   }
 `
 
-const CTA2 = styled(ExternalLink)`
-  position: relative;
-  overflow: hidden;
-  padding: 16px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid ${({ theme }) => theme.deprecated_bg3};
-
-  * {
-    color: ${({ theme }) => theme.deprecated_text1};
-    text-decoration: none !important;
-  }
-
-  :hover {
-    border: 1px solid ${({ theme }) => theme.deprecated_bg4};
-    text-decoration: none !important;
-    * {
-      text-decoration: none !important;
-    }
-  }
-`
-
 const HeaderText = styled(ThemedText.DeprecatedLabel)`
   align-items: center;
   display: flex;
@@ -91,9 +65,6 @@ const ResponsiveColumn = styled(AutoColumn)`
 `
 
 export default function CTACards() {
-  const { chainId } = useWeb3React()
-  const { infoLink } = getChainInfoOrDefault(chainId)
-
   return (
     <CTASection>
       <CTA1 href="https://help.uniswap.org/en/articles/5391541-providing-liquidity-on-uniswap-v3">
