@@ -18,7 +18,7 @@
     "i18n:pseudo": "lingui extract --locale pseudo && lingui compile",
     "prepare": "yarn contracts:compile && yarn i18n:compile",
     "start": "craco start",
-    "build": "craco build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider craco build",
     "serve": "serve build -l 3000",
     "deduplicate": "yarn-deduplicate --strategy=highest",
     "lint": "yarn eslint .",
