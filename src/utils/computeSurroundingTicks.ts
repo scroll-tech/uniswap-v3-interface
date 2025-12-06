@@ -1,9 +1,13 @@
 import { Token } from '@uniswap/sdk-core'
 import { tickToPrice } from '@uniswap/v3-sdk'
-import { TickProcessed } from 'hooks/usePoolTickData'
+import { TickProcessed, TickData } from 'hooks/usePoolTickData'
 import JSBI from 'jsbi'
 
-import { Ticks } from '../graphql/thegraph/AllV3TicksQuery'
+// GraphQL type import commented out - using local TickData type instead
+// import { Ticks } from '../graphql/thegraph/AllV3TicksQuery'
+
+// Local type alias for compatibility
+type Ticks = readonly TickData[]
 
 const PRICE_FIXED_DIGITS = 8
 

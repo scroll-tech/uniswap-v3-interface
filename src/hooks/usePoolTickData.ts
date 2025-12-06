@@ -3,12 +3,18 @@ import { FeeAmount, nearestUsableTick, Pool, TICK_SPACINGS, tickToPrice } from '
 import { useWeb3React } from '@web3-react/core'
 import { SupportedChainId } from 'constants/chains'
 import { ZERO_ADDRESS } from 'constants/misc'
-import useAllV3TicksQuery, { TickData } from 'graphql/thegraph/AllV3TicksQuery'
+// import useAllV3TicksQuery, { TickData } from 'graphql/thegraph/AllV3TicksQuery'
 import JSBI from 'jsbi'
 import { useSingleContractMultipleData } from 'lib/hooks/multicall'
-import ms from 'ms.macro'
+// import ms from 'ms.macro'
 import { useEffect, useMemo, useState } from 'react'
 import computeSurroundingTicks from 'utils/computeSurroundingTicks'
+
+// Local TickData type (previously from GraphQL)
+export interface TickData {
+  tick: number
+  liquidityNet: JSBI
+}
 
 import { V3_CORE_FACTORY_ADDRESSES } from '../constants/addresses'
 import { useTickLens } from './useContract'
@@ -142,27 +148,29 @@ function useTicksFromTickLens(
   )
 }
 
-function useTicksFromSubgraph(
-  currencyA: Currency | undefined,
-  currencyB: Currency | undefined,
-  feeAmount: FeeAmount | undefined
-) {
-  const { chainId } = useWeb3React()
-  const poolAddress =
-    currencyA && currencyB && feeAmount
-      ? Pool.getAddress(
-          currencyA?.wrapped,
-          currencyB?.wrapped,
-          feeAmount,
-          undefined,
-          chainId ? V3_CORE_FACTORY_ADDRESSES[chainId] : undefined
-        )
-      : undefined
+// GraphQL subgraph usage commented out - using direct contract calls instead
+// function useTicksFromSubgraph(
+//   currencyA: Currency | undefined,
+//   currencyB: Currency | undefined,
+//   feeAmount: FeeAmount | undefined
+// ) {
+//   const { chainId } = useWeb3React()
+//   const poolAddress =
+//     currencyA && currencyB && feeAmount
+//       ? Pool.getAddress(
+//           currencyA?.wrapped,
+//           currencyB?.wrapped,
+//           feeAmount,
+//           undefined,
+//           chainId ? V3_CORE_FACTORY_ADDRESSES[chainId] : undefined
+//         )
+//       : undefined
 
-  return useAllV3TicksQuery(poolAddress, 0, ms`30s`)
-}
+//   return useAllV3TicksQuery(poolAddress, 0, ms`30s`)
+// }
 
 // Fetches all ticks for a given pool
+// GraphQL usage commented out - always using direct contract calls via TickLens
 function useAllV3Ticks(
   currencyA: Currency | undefined,
   currencyB: Currency | undefined,
@@ -172,15 +180,17 @@ function useAllV3Ticks(
   error: unknown
   ticks: readonly TickData[] | undefined
 } {
-  const useSubgraph = currencyA ? !CHAIN_IDS_MISSING_SUBGRAPH_DATA.includes(currencyA.chainId) : true
+  // Always use TickLens (direct contract calls) instead of GraphQL
+  // const useSubgraph = currencyA ? !CHAIN_IDS_MISSING_SUBGRAPH_DATA.includes(currencyA.chainId) : true
+  // const tickLensTickData = useTicksFromTickLens(!useSubgraph ? currencyA : undefined, currencyB, feeAmount)
+  // const subgraphTickData = useTicksFromSubgraph(useSubgraph ? currencyA : undefined, currencyB, feeAmount)
 
-  const tickLensTickData = useTicksFromTickLens(!useSubgraph ? currencyA : undefined, currencyB, feeAmount)
-  const subgraphTickData = useTicksFromSubgraph(useSubgraph ? currencyA : undefined, currencyB, feeAmount)
+  const tickLensTickData = useTicksFromTickLens(currencyA, currencyB, feeAmount)
 
   return {
-    isLoading: useSubgraph ? subgraphTickData.isLoading : tickLensTickData.isLoading,
-    error: useSubgraph ? subgraphTickData.error : tickLensTickData.isError,
-    ticks: useSubgraph ? subgraphTickData.data?.ticks : tickLensTickData.tickData,
+    isLoading: tickLensTickData.isLoading,
+    error: tickLensTickData.isError,
+    ticks: tickLensTickData.tickData,
   }
 }
 
