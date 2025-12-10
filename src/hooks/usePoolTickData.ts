@@ -109,16 +109,20 @@ function useTicksFromTickLens(
       callStates
         .map(({ result }) => result?.populatedTicks)
         .reduce(
-          (accumulator, current) => [
-            ...accumulator,
-            ...(current?.map((tickData: TickData) => {
-              return {
-                tick: tickData.tick,
-                liquidityNet: JSBI.BigInt(tickData.liquidityNet),
-              }
-            }) ?? []),
-          ],
-          []
+          (accumulator, current) => {
+            if (!current) return accumulator
+            const validTicks = current
+              .filter((tickData: TickData): tickData is NonNullable<TickData> => tickData !== null)
+              .filter((tickData: NonNullable<TickData>): tickData is NonNullable<TickData> & { tick: string } => tickData.tick !== null)
+              .map((tickData: NonNullable<TickData> & { tick: string }) => {
+                return {
+                  tick: tickData.tick,
+                  liquidityNet: JSBI.BigInt(tickData.liquidityNet ?? '0'),
+                }
+              })
+            return [...accumulator, ...validTicks]
+          },
+          [] as TickData[]
         ),
     [callStates]
   )
@@ -131,7 +135,7 @@ function useTicksFromTickLens(
   // return the latest synced tickData even if we are still loading the newest data
   useEffect(() => {
     if (!IsSyncing && !isLoading && !isError && isValid) {
-      setTickDataLatestSynced(tickData.sort((a, b) => a.tick - b.tick))
+      setTickDataLatestSynced(tickData.filter((t): t is NonNullable<TickData> & { tick: string } => t !== null && t.tick !== null).sort((a, b) => Number(a.tick) - Number(b.tick)))
     }
   }, [isError, isLoading, IsSyncing, tickData, isValid])
 
@@ -224,7 +228,8 @@ export function usePoolActiveLiquidity(
     // find where the active tick would be to partition the array
     // if the active tick is initialized, the pivot will be an element
     // if not, take the previous tick as pivot
-    const pivot = ticks.findIndex(({ tick }) => tick > activeTick) - 1
+    const validTicks = ticks.filter((t): t is NonNullable<typeof t> & { tick: string } => t !== null && t.tick !== null)
+    const pivot = validTicks.findIndex(({ tick }) => Number(tick) > activeTick) - 1
 
     if (pivot < 0) {
       // consider setting a local error
@@ -237,16 +242,17 @@ export function usePoolActiveLiquidity(
       }
     }
 
+    const pivotTick = validTicks[pivot]
     const activeTickProcessed: TickProcessed = {
       liquidityActive: JSBI.BigInt(pool[1]?.liquidity ?? 0),
       tick: activeTick,
-      liquidityNet: Number(ticks[pivot].tick) === activeTick ? JSBI.BigInt(ticks[pivot].liquidityNet) : JSBI.BigInt(0),
+      liquidityNet: Number(pivotTick.tick) === activeTick ? JSBI.BigInt(pivotTick.liquidityNet ?? '0') : JSBI.BigInt(0),
       price0: tickToPrice(token0, token1, activeTick).toFixed(PRICE_FIXED_DIGITS),
     }
 
-    const subsequentTicks = computeSurroundingTicks(token0, token1, activeTickProcessed, ticks, pivot, true)
+    const subsequentTicks = computeSurroundingTicks(token0, token1, activeTickProcessed, validTicks, pivot, true)
 
-    const previousTicks = computeSurroundingTicks(token0, token1, activeTickProcessed, ticks, pivot, false)
+    const previousTicks = computeSurroundingTicks(token0, token1, activeTickProcessed, validTicks, pivot, false)
 
     const ticksProcessed = previousTicks.concat(activeTickProcessed).concat(subsequentTicks)
 

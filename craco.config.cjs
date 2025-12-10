@@ -31,6 +31,9 @@ module.exports = {
       // This is required because conedison uses * to redirect all imports to its dist.
       webpackConfig.resolve.alias['@uniswap/conedison'] = '@uniswap/conedison/dist'
 
+      // Disable source maps to avoid SourceMapConsumer WASM initialization issues
+      webpackConfig.devtool = false
+
       return webpackConfig
     },
   },

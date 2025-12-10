@@ -23,11 +23,16 @@ export default function computeSurroundingTicks(
   // building active liquidity for every tick.
   let processedTicks: TickProcessed[] = []
   for (let i = pivot + (ascending ? 1 : -1); ascending ? i < sortedTickData.length : i >= 0; ascending ? i++ : i--) {
-    const tick = Number(sortedTickData[i].tick)
+    const tickData = sortedTickData[i]
+    if (!tickData || tickData.tick === null || tickData.liquidityNet === null) {
+      continue
+    }
+    const tick = Number(tickData.tick)
+    const liquidityNet = JSBI.BigInt(tickData.liquidityNet)
     const currentTickProcessed: TickProcessed = {
       liquidityActive: previousTickProcessed.liquidityActive,
       tick,
-      liquidityNet: JSBI.BigInt(sortedTickData[i].liquidityNet),
+      liquidityNet,
       price0: tickToPrice(token0, token1, tick).toFixed(PRICE_FIXED_DIGITS),
     }
 
@@ -38,7 +43,7 @@ export default function computeSurroundingTicks(
     if (ascending) {
       currentTickProcessed.liquidityActive = JSBI.add(
         previousTickProcessed.liquidityActive,
-        JSBI.BigInt(sortedTickData[i].liquidityNet)
+        liquidityNet
       )
     } else if (!ascending && JSBI.notEqual(previousTickProcessed.liquidityNet, JSBI.BigInt(0))) {
       // We are iterating descending, so look at the previous tick and apply any net liquidity.
