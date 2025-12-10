@@ -1,0 +1,10 @@
+Error: [
+  {
+    "message": "This endpoint has been removed. If you have any questions, reach out to support@thegraph.zendesk.com"
+  }
+]
+    at /home/irenee/Projects/uniswap-v3-interface/vercel-fix/node_modules/get-graphql-schema/dist/index.js:84:31
+    at step (/home/irenee/Projects/uniswap-v3-interface/vercel-fix/node_modules/get-graphql-schema/dist/index.js:33:23)
+    at Object.next (/home/irenee/Projects/uniswap-v3-interface/vercel-fix/node_modules/get-graphql-schema/dist/index.js:14:53)
+    at fulfilled (/home/irenee/Projects/uniswap-v3-interface/vercel-fix/node_modules/get-graphql-schema/dist/index.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

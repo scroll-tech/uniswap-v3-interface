@@ -9,8 +9,6 @@
 /src/locales/**/pseudo.po
 
 # generated graphql types
-__generated__/
-schema.graphql
 
 # dependencies
 /node_modules

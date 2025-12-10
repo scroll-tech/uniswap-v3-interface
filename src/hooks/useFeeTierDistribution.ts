@@ -97,13 +97,18 @@ function usePoolTVL(token0: Token | undefined, token1: Token | undefined) {
       }
     }
 
-    const all = asToken0.concat(asToken1)
+    const all = asToken0.concat(asToken1).filter((value): value is NonNullable<typeof value> => value !== null)
 
     // sum tvl for token0 and token1 by fee tier
     const tvlByFeeTier = all.reduce<{ [feeAmount: number]: [number | undefined, number | undefined] }>(
       (acc, value) => {
-        acc[value.feeTier][0] = (acc[value.feeTier][0] ?? 0) + Number(value.totalValueLockedToken0)
-        acc[value.feeTier][1] = (acc[value.feeTier][1] ?? 0) + Number(value.totalValueLockedToken1)
+        if (value.feeTier === null) return acc
+        const feeTier = Number(value.feeTier)
+        if (!acc[feeTier]) {
+          acc[feeTier] = [undefined, undefined]
+        }
+        acc[feeTier][0] = (acc[feeTier][0] ?? 0) + Number(value.totalValueLockedToken0 ?? 0)
+        acc[feeTier][1] = (acc[feeTier][1] ?? 0) + Number(value.totalValueLockedToken1 ?? 0)
         return acc
       },
       {

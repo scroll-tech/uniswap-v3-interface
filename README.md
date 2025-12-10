@@ -48,4 +48,4 @@ The Uniswap Interface supports swapping, adding liquidity, removing liquidity an
 ## Accessing Uniswap V1
 
 The Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways
-linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
+linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0)..
