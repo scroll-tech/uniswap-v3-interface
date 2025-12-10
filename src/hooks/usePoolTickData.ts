@@ -1,24 +1,24 @@
 import { Currency } from '@uniswap/sdk-core'
 import { FeeAmount, nearestUsableTick, Pool, TICK_SPACINGS, tickToPrice } from '@uniswap/v3-sdk'
 import { useWeb3React } from '@web3-react/core'
+import { V3_CORE_FACTORY_ADDRESSES } from 'constants/addresses'
 import { SupportedChainId } from 'constants/chains'
 import { ZERO_ADDRESS } from 'constants/misc'
-// import useAllV3TicksQuery, { TickData } from 'graphql/thegraph/AllV3TicksQuery'
 import JSBI from 'jsbi'
+// import useAllV3TicksQuery, { TickData } from 'graphql/thegraph/AllV3TicksQuery'
 import { useSingleContractMultipleData } from 'lib/hooks/multicall'
-// import ms from 'ms.macro'
 import { useEffect, useMemo, useState } from 'react'
+// import ms from 'ms.macro'
 import computeSurroundingTicks from 'utils/computeSurroundingTicks'
+
+import { useTickLens } from './useContract'
+import { PoolState, usePool } from './usePools'
 
 // Local TickData type (previously from GraphQL)
 export interface TickData {
   tick: number
   liquidityNet: JSBI
 }
-
-import { V3_CORE_FACTORY_ADDRESSES } from '../constants/addresses'
-import { useTickLens } from './useContract'
-import { PoolState, usePool } from './usePools'
 
 const PRICE_FIXED_DIGITS = 8
 const CHAIN_IDS_MISSING_SUBGRAPH_DATA = [

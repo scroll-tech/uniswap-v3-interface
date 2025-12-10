@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/react'
 import { Currency, Token } from '@uniswap/sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk'
 // import useBlockNumber from 'lib/hooks/useBlockNumber'

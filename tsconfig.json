@@ -26,6 +26,6 @@
     "types": ["jest"],
     "useUnknownInCatchVariables": false
   },
-  "exclude": ["node_modules", "cypress"],
+  "exclude": ["node_modules", "cypress", "src/graphql/thegraph"],
   "include": ["src/**/*"]
 }

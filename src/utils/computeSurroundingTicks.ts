@@ -1,6 +1,6 @@
 import { Token } from '@uniswap/sdk-core'
 import { tickToPrice } from '@uniswap/v3-sdk'
-import { TickProcessed, TickData } from 'hooks/usePoolTickData'
+import { TickData,TickProcessed } from 'hooks/usePoolTickData'
 import JSBI from 'jsbi'
 
 // GraphQL type import commented out - using local TickData type instead
