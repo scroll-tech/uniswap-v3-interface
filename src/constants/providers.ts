@@ -71,4 +71,5 @@ export const RPC_PROVIDERS: { [key in SupportedChainId]: StaticJsonRpcProvider }
   // [SupportedChainId.CELO]: new AppJsonRpcProvider(SupportedChainId.CELO),
   // [SupportedChainId.CELO_ALFAJORES]: new AppJsonRpcProvider(SupportedChainId.CELO_ALFAJORES),
   [SupportedChainId.SCROLL_ALPHA]: new AppJsonRpcProvider(SupportedChainId.SCROLL_ALPHA),
+  [SupportedChainId.SCROLL_STAGING]: new AppJsonRpcProvider(SupportedChainId.SCROLL_STAGING),
 }
